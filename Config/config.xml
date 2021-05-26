@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+    <forms>
+        <form name="sms77.config.form" class="Sms77\Form\Configuration"/>
+        <form name="sms77.bulk.sms.form" class="Sms77\Form\BulkSms"/>
+    </forms>
+
+    <hooks>
+        <hook id="sms77.configuration.hook" class="Sms77\Hook\HookSms77Manager" scope="request">
+            <tag name="hook.event_listener" event="module.configuration" type="back" method="onModuleConfiguration"/>
+        </hook>
+
+        <hook id="sms77.customers.actions" class="Sms77\Hook\HookSms77Manager" scope="request">
+            <tag name="hook.event_listener" event="customer.bottom" type="back" method="onCustomers"/>
+        </hook>
+    </hooks>
+</config>

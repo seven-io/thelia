@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://thelia.net/schema/dic/module"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
+    <fullnamespace>Sms77\Sms77</fullnamespace>
+    <descriptive locale="en_US">
+        <title>Sms77</title>
+    </descriptive>
+    <languages>
+        <language>en_US</language>
+    </languages>
+    <version>1.0.0</version>
+    <authors>
+        <author>
+            <name>André Matthies</name>
+            <company>sms77 e.K.</company>
+            <email>matthiez@gmail.com</email>
+            <website>https://github.com/matthiez</website>
+        </author>
+    </authors>
+    <type>classic</type>
+    <thelia>2.4.4</thelia>
+    <stability>prod</stability>
+    <mandatory>0</mandatory>
+    <hidden>0</hidden>
+</module>
