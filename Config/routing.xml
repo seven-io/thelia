@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="admin.sms77.config" path="/admin/module/Sms77/configure" methods="post">
+        <default key="_controller">Sms77\Controller\ConfigurationController::editConfiguration</default>
+    </route>
+
+    <route id="admin.sms77.customers.sms" path="/admin/module/Sms77/bulk/sms" methods="get">
+        <default key="_controller">Sms77\Controller\BulkController::index</default>
+    </route>
+
+    <route id="admin.sms77.customers.sms.submit" path="/admin/module/Sms77/bulk/sms" methods="post">
+        <default key="_controller">Sms77\Controller\BulkController::send</default>
+    </route>
+</routes>
