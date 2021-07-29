@@ -1,5 +1,6 @@
 <?php namespace Sms77\Controller;
 
+use DateTime;
 use Propel\Runtime\Collection\ObjectCollection;
 use ReflectionObject;
 use Sms77\Sms77;
@@ -114,15 +115,22 @@ class BulkController extends BaseAdminController {
             return;
         }
 
-        foreach ($requests as $request) $responses[] =
-            $this->request('sms', array_merge($this->buildBaseParams($data), $request));
+        $params = [
+            'debug' => (int)$data['debug'],
+            'delay' => $data['delay'] instanceof DateTime
+                ? $data['delay']->getTimestamp() : null,
+            'flash' => (int)$data['flash'],
+            'foreign_id' => $data['foreign_id'],
+            'from' => $data['from'],
+            'label' => $data['label'],
+            'no_reload' => (int)$data['no_reload'],
+            'performance_tracking' => (int)$data['performance_tracking'],
+        ];
+        foreach ($requests as $i => $req) $requests[$i] = array_merge($params, $req);
+        $this->request('sms', $requests);
     }
 
-    private function buildBaseParams(array $data): array {
-        return ['from' => $data['from']];
-    }
-
-    private function request(string $endpoint, array $data) {
+    private function request(string $endpoint, array $requests) {
         $apiKey = Sms77::getApiKey();
 
         if ('' === $apiKey) {
@@ -131,17 +139,21 @@ class BulkController extends BaseAdminController {
             return;
         }
 
-        $ch = curl_init('https://gateway.sms77.io/api/' . $endpoint);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        $headers = [
             'Accept: application/json',
             'Content-type: application/json',
             'SentWith: Thelia',
             'X-Api-Key: ' . $apiKey,
-        ]);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $res = curl_exec($ch);
-        curl_close($ch);
-        $this->messages[] = $res;
+        ];
+
+        foreach ($requests as $request) {
+            $ch = curl_init('https://gateway.sms77.io/api/' . $endpoint);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($request));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $res = curl_exec($ch);
+            curl_close($ch);
+            $this->messages[] = $res;
+        }
     }
 }
