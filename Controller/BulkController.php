@@ -136,6 +136,7 @@ class BulkController extends BaseAdminController {
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Accept: application/json',
             'Content-type: application/json',
+            'SentWith: Thelia',
             'X-Api-Key: ' . $apiKey,
         ]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

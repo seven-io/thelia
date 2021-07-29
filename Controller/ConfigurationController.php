@@ -21,7 +21,8 @@ class ConfigurationController extends BaseAdminController {
         try {
             $data = $this->validateForm($form)->getData();
 
-            Sms77::setConfigValue(Sms77::SETTING_API_KEY, $data[Sms77::SETTING_API_KEY]);
+            Sms77::setApiKey($data);
+            Sms77::setSmsFrom($data);
 
             return RedirectResponse::create(
                 URL::getInstance()->absoluteUrl('/admin/module/Sms77'));
@@ -32,7 +33,7 @@ class ConfigurationController extends BaseAdminController {
         if (null !== $error_message) {
             $this->setupFormErrorContext('configuration', $error_message, $form);
 
-            $response = $this->render("module-configure", ['module_code' => 'Sms77']);
+            $response = $this->render('module-configure', ['module_code' => 'Sms77']);
         }
 
         return $response;

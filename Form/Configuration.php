@@ -7,16 +7,31 @@ use Thelia\Form\BaseForm;
 class Configuration extends BaseForm {
     protected function buildForm() {
         $this->formBuilder->add(
-            Sms77::SETTING_API_KEY,
+            'api_key',
             'text',
             [
-                'data' => Sms77::getConfigValue(Sms77::SETTING_API_KEY, ''),
+                'data' => Sms77::getApiKey(),
                 'label' => Translator::getInstance()
-                    ->trans(Sms77::SETTING_API_KEY, [], Sms77::DOMAIN_NAME),
+                    ->trans('api_key', [], Sms77::DOMAIN_NAME),
                 'label_attr' => [
-                    'for' => Sms77::SETTING_API_KEY,
+                    'for' => 'api_key',
                 ],
                 'required' => true,
+            ]
+        );
+
+        $this->formBuilder->add(
+            'sms_from',
+            'text',
+            [
+                'data' => Sms77::getSmsFrom(),
+                'label' => Translator::getInstance()
+                    ->trans('sms_from', [], Sms77::DOMAIN_NAME),
+                'label_attr' => [
+                    'for' => 'sms_from',
+                    'help' => Translator::getInstance()
+                        ->trans('sms_from_help', [], Sms77::DOMAIN_NAME),
+                ],
             ]
         );
     }

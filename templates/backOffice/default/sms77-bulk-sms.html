@@ -53,7 +53,7 @@
             <div class='form-group {if $error}has-error{/if}'>
                 <label class='control-label' for='{$label_attr.for}'>
                     <input name='{$name}' id='{$label_attr.for}' maxlength='16'
-                           placeholder='Thelia' />
+                           placeholder='Thelia' value='{$value}' />
                     {$label}
                     {form_error form=$form field='text'}
                     <br/><span class='error'>{$message}</span>

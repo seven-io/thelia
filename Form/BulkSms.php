@@ -35,6 +35,7 @@ class BulkSms extends BaseForm {
 
         $this->formBuilder
             ->add('from', 'text', [
+                    'data' => Sms77::getSmsFrom(),
                     'label' => Translator::getInstance()
                         ->trans('sms_from', [], Sms77::DOMAIN_NAME),
                     'label_attr' => [

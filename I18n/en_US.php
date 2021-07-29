@@ -9,6 +9,7 @@ return [
     'filter_reseller' => 'Is reseller?',
     'filter_reseller_help' => 'Narrows down customer search to include only resellers',
     'filters' => 'Filters',
+    'general' => 'General',
     'no_requests' => 'Nothing to send. Try again with a broader combination of filters.',
     'send' => 'Send',
     'sms_from' => 'Sender',

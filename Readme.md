@@ -5,8 +5,8 @@ Send SMS to your customers via Sms77.io.
 # Installation
 
 ## Manually
-* Extract the module into `<thelia_root>/local/modules/`.
-* Activate it in your thelia administration panel.
+* Download the latest release from [GitHub](http://github.com/sms77io/thelia/releases/latest/download/sms77-telia-latest.zip).
+* Extract the archive into the modules folder `unzip -d <thelia_root>/local/modules/`.
 
 ## Composer
 Execute from inside your thelia installation root:
@@ -20,6 +20,9 @@ After installation, enable the module and fill in your API key in the module set
 ### Send bulk SMS
 Go to *Customers*, click *Bulk SMS* and fill out the form to fit your needs.
 After clicking *Send*, the messages get sent to the customers.
+
+### Filters
+- *Reseller* Narrow down customer search to include only resellers
 
 ### Placeholders
 
