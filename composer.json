@@ -7,7 +7,7 @@
             "role": "Developer"
         }
     ],
-    "description": "Send SMS to customers inside Thelia via Sms77.",
+    "description": "Send SMS to customers inside Thelia via sms77.",
     "extra": {
         "installer-name": "Sms77"
     },
@@ -15,7 +15,8 @@
     "keywords": [
         "2fa",
         "gateway",
-        "sms"
+        "sms",
+        "thelia"
     ],
     "license": "MIT",
     "name": "sms77/thelia",
