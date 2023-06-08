@@ -1,4 +1,4 @@
-<?php namespace Sms77;
+<?php namespace Seven;
 
 class Setting {
     const API_KEY = 'api_key';

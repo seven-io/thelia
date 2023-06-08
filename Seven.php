@@ -1,9 +1,9 @@
-<?php namespace Sms77;
+<?php namespace Seven;
 
 use Thelia\Module\BaseModule;
 
-class Sms77 extends BaseModule {
-    const DOMAIN_NAME = 'sms77';
+class Seven extends BaseModule {
+    const DOMAIN_NAME = 'seven';
 
     public static function getApiKey(): string {
         return self::getConfigValue(Setting::API_KEY, '');

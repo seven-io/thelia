@@ -7,11 +7,11 @@
             "role": "Developer"
         }
     ],
-    "description": "Send SMS to customers inside Thelia via sms77.",
+    "description": "Send SMS to customers inside Thelia via seven.",
     "extra": {
-        "installer-name": "Sms77"
+        "installer-name": "Seven"
     },
-    "homepage": "https://github.com/sms77io/thelia",
+    "homepage": "https://github.com/seven-io/thelia",
     "keywords": [
         "2fa",
         "gateway",
@@ -19,16 +19,16 @@
         "thelia"
     ],
     "license": "MIT",
-    "name": "sms77/thelia",
+    "name": "seven.io/thelia",
     "require": {
         "php": ">=7.0",
         "thelia/installer": "~1.1"
     },
     "support": {
-        "docs": "https://github.com/sms77io/thelia",
-        "email": "support@sms77.io",
-        "rss": "https://www.sms77.io/de/feed/",
-        "source": "https://github.com/sms77io/thelia"
+        "docs": "https://github.com/seven-io/thelia",
+        "email": "support@seven.io",
+        "rss": "https://www.seven.io/en/feed/",
+        "source": "https://github.com/seven-io/thelia"
     },
     "type": "thelia-module"
 }

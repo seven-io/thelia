@@ -1,17 +1,17 @@
-![sms77 Logo](https://www.sms77.io/wp-content/uploads/2019/07/sms77-Logo-400x79.png "sms77 Logo")
+![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
 
-Send SMS to your customers via sms77.
+Send SMS to your customers via seven.
 
 # Installation
 
 ## Manually
-* Download the latest release from [GitHub](http://github.com/sms77io/thelia/releases/latest/download/sms77-telia-latest.zip).
+* Download the latest release from [GitHub](http://github.com/seven-io/thelia/releases/latest/download/seven-telia-latest.zip).
 * Extract the archive into the modules folder `unzip -d <thelia_root>/local/modules/`.
 
 ## Composer
 Execute from inside your thelia installation root:
 
-`composer require sms77/thelia`
+`composer require seven.io/thelia`
 
 ## Usage
 
@@ -34,6 +34,6 @@ Examples:
 
 #### Support
 
-Need help? Feel free to [contact us](https://www.sms77.io/en/company/contact/).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
 
 [![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)

@@ -1,20 +1,20 @@
 <div class='col-md-12 general-block-decorator'>
     <div class='row'>
         <div class='col-md-12 title title-without-tabs'>
-            Sms77 {intl d='sms77' l='config'}
+            Seven {intl d='seven' l='config'}
         </div>
     </div>
     <div class='form-container'>
         <div class='row inner-toolbar'></div>
         <div class='col-md-12'>
-            {form name='sms77.config.form'}
-            <form method='POST' id='sms77-form' class='clearfix'
-                  action='{url path='/admin/module/Sms77/configure'}' {form_enctype}>
+            {form name='seven.config.form'}
+            <form method='POST' id='seven-form' class='clearfix'
+                  action='{url path='/admin/module/Seven/configure'}' {form_enctype}>
 
             {form_hidden_fields}
 
             <fieldset>
-                <legend>{intl d='sms77' l='general'}</legend>
+                <legend>{intl d='seven' l='general'}</legend>
 
                 {form_field field='api_key'}
                 <div class='form-group {if $error}has-error{/if}'>
@@ -56,7 +56,7 @@
             </fieldset>
 
             <input type='submit' class='form-submit-button btn btn-sm btn-success'
-                   value='{intl d='sms77' l='submit'}' />
+                   value='{intl d='seven' l='submit'}' />
             </form>
             {/form}
         </div>

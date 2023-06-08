@@ -1,6 +1,6 @@
-<?php namespace Sms77\Controller;
+<?php namespace Seven\Controller;
 
-use Sms77\Sms77;
+use Seven\Seven;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Thelia\Controller\Admin\BaseAdminController;
 use Thelia\Core\Security\AccessManager;
@@ -10,22 +10,22 @@ use Thelia\Tools\URL;
 
 class ConfigurationController extends BaseAdminController {
     public function editConfiguration() {
-        $response = $this->checkAuth(AdminResources::MODULE, [Sms77::DOMAIN_NAME],
+        $response = $this->checkAuth(AdminResources::MODULE, [Seven::DOMAIN_NAME],
             AccessManager::UPDATE);
 
         if (null !== $response) return $response;
 
-        $form = $this->createForm('sms77.config.form');
+        $form = $this->createForm('seven.config.form');
         $error_message = null;
 
         try {
             $data = $this->validateForm($form)->getData();
 
-            Sms77::setApiKey($data);
-            Sms77::setSmsFrom($data);
+            Seven::setApiKey($data);
+            Seven::setSmsFrom($data);
 
             return RedirectResponse::create(
-                URL::getInstance()->absoluteUrl('/admin/module/Sms77'));
+                URL::getInstance()->absoluteUrl('/admin/module/Seven'));
         } catch (FormValidationException $e) {
             $error_message = $this->createStandardFormValidationErrorMessage($e);
         }
@@ -33,7 +33,7 @@ class ConfigurationController extends BaseAdminController {
         if (null !== $error_message) {
             $this->setupFormErrorContext('configuration', $error_message, $form);
 
-            $response = $this->render('module-configure', ['module_code' => 'Sms77']);
+            $response = $this->render('module-configure', ['module_code' => 'Seven']);
         }
 
         return $response;

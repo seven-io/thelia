@@ -1,9 +1,9 @@
-<?php namespace Sms77\Controller;
+<?php namespace Seven\Controller;
 
 use DateTime;
 use Propel\Runtime\Collection\ObjectCollection;
 use ReflectionObject;
-use Sms77\Sms77;
+use Seven\Seven;
 use Thelia\Controller\Admin\BaseAdminController;
 use Thelia\Core\HttpFoundation\Response;
 use Thelia\Core\Security\AccessManager;
@@ -17,7 +17,7 @@ class BulkController extends BaseAdminController {
     private $messages = [];
 
     public function index(): Response {
-        return $this->render('sms77-bulk-sms', ['messages' => $this->messages]);
+        return $this->render('Seven-bulk-sms', ['messages' => $this->messages]);
     }
 
     private function getCustomers(array $data): ObjectCollection {
@@ -42,11 +42,11 @@ class BulkController extends BaseAdminController {
     }
 
     public function send(): Response {
-        $response = $this->checkAuth(AdminResources::MODULE, [Sms77::DOMAIN_NAME],
+        $response = $this->checkAuth(AdminResources::MODULE, [Seven::DOMAIN_NAME],
             AccessManager::UPDATE);
         if (null !== $response) return $response;
 
-        $form = $this->createForm('sms77.bulk.sms.form');
+        $form = $this->createForm('Seven.bulk.sms.form');
         $err = null;
 
         try {
@@ -57,7 +57,7 @@ class BulkController extends BaseAdminController {
         }
 
         if (null !== $err) $this->setupFormErrorContext(
-            'Sms77 ' . $this->getTranslator()->trans('bulk_sms', [], Sms77::DOMAIN_NAME),
+            'Seven ' . $this->getTranslator()->trans('bulk_sms', [], Seven::DOMAIN_NAME),
             $err, $form);
 
         return $this->index();
@@ -111,7 +111,7 @@ class BulkController extends BaseAdminController {
 
         if (empty($requests)) {
             $this->messages[] = $this->getTranslator()
-                ->trans('no_request', [], Sms77::DOMAIN_NAME);
+                ->trans('no_request', [], Seven::DOMAIN_NAME);
             return;
         }
 
@@ -131,11 +131,11 @@ class BulkController extends BaseAdminController {
     }
 
     private function request(string $endpoint, array $requests) {
-        $apiKey = Sms77::getApiKey();
+        $apiKey = Seven::getApiKey();
 
         if ('' === $apiKey) {
             $this->messages[] = $this->getTranslator()
-                ->trans('api_key_missing', [], Sms77::DOMAIN_NAME);
+                ->trans('api_key_missing', [], Seven::DOMAIN_NAME);
             return;
         }
 
@@ -147,7 +147,7 @@ class BulkController extends BaseAdminController {
         ];
 
         foreach ($requests as $request) {
-            $ch = curl_init('https://gateway.sms77.io/api/' . $endpoint);
+            $ch = curl_init('https://gateway.Seven.io/api/' . $endpoint);
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($request));
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

@@ -1,10 +1,10 @@
 {extends file='admin-layout.tpl'}
 
-{block name='page-title'}Sms77 {intl d='sms77' l='bulk_sms'}{/block}
+{block name='page-title'}Seven {intl d='seven' l='bulk_sms'}{/block}
 
 {block name='check-resource'}admin.module{/block}
 {block name='check-access'}view{/block}
-{block name='check-module'}Sms77{/block}
+{block name='check-module'}Seven{/block}
 
 {block name='main-content'}
 <div class='col-md-12 general-block-decorator'>
@@ -16,20 +16,20 @@
 
     <div class='row'>
         <div class='col-md-12 title title-without-tabs'>
-            {intl d='sms77' l='bulk_sms_desc'}
+            {intl d='seven' l='bulk_sms_desc'}
         </div>
     </div>
 
     <div class='form-container'>
         <div class='col-md-12'>
-            {form name='sms77.bulk.sms.form'}
-            <form method='POST' id='sms77-bulk-sms-form' class='clearfix'
-                  action='{url path="/admin/module/Sms77/bulk/sms"}' {form_enctype}>
+            {form name='seven.bulk.sms.form'}
+            <form method='POST' id='seven-bulk-sms-form' class='clearfix'
+                  action='{url path="/admin/module/Seven/bulk/sms"}' {form_enctype}>
 
                 {form_hidden_fields}
 
                 <fieldset>
-                    <legend>{intl d='sms77' l='filters'}</legend>
+                    <legend>{intl d='seven' l='filters'}</legend>
 
                     {form_field form=$form field='filter_reseller'}
                     <div class='form-group checkbox-inline'>
@@ -177,7 +177,7 @@
                     <textarea class='form-control' name='{$name}' id='{$label_attr.for}'
                               maxlength='1520'
                               rows='5' required
-                              placeholder='{intl d="sms77" l="sms_text_placeholder"}'
+                              placeholder='{intl d="seven" l="sms_text_placeholder"}'
                     ></textarea>
 
                     <span class='help-block'>{$label_attr.help}</span>
@@ -185,7 +185,7 @@
                 {/form_field}
 
                 <input type='submit' class='form-submit-button btn btn-sm btn-success'
-                       value='{intl d="sms77" l="send"}'/>
+                       value='{intl d="seven" l="send"}'/>
             </form>
             {/form}
         </div>

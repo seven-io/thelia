@@ -2,9 +2,9 @@
 <module xmlns="http://thelia.net/schema/dic/module"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
-    <fullnamespace>Sms77\Sms77</fullnamespace>
+    <fullnamespace>Seven\Seven</fullnamespace>
     <descriptive locale="en_US">
-        <title>sms77</title>
+        <title>seven</title>
     </descriptive>
     <languages>
         <language>en_US</language>
@@ -14,9 +14,9 @@
     <authors>
         <author>
             <name>André Matthies</name>
-            <company>sms77 e.K.</company>
-            <email>matthiez@gmail.com</email>
-            <website>https://github.com/matthiez</website>
+            <company>seven communications GmbH &amp; Co. KG</company>
+            <email>a.matthies@seven.io</email>
+            <website>https://github.com/seven-io</website>
         </author>
     </authors>
     <type>classic</type>

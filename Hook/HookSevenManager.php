@@ -1,15 +1,15 @@
 <?php
-namespace Sms77\Hook;
+namespace Seven\Hook;
 
 use Thelia\Core\Event\Hook\HookRenderEvent;
 use Thelia\Core\Hook\BaseHook;
 
-class HookSms77Manager extends BaseHook {
+class HookSevenManager extends BaseHook {
     public function onModuleConfiguration(HookRenderEvent $event) {
-        $event->add($this->render('sms77-config.html'));
+        $event->add($this->render('seven-config.html'));
     }
 
     public function onCustomers(HookRenderEvent $event) {
-        $event->add($this->render('sms77-customers-actions.html'));
+        $event->add($this->render('seven-customers-actions.html'));
     }
 }
