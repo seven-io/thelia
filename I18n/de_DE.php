@@ -9,9 +9,6 @@ return [
 
     'config' => 'Konfiguration',
 
-    'debug' => 'Debug',
-    'debug_help' => 'Validiert die Anfrage auf API-Ebene, sendet aber keine Nachrichten.',
-
     'filter_reseller' => 'Ist Wiederverkäufer?',
     'filter_reseller_help' => 'Limitiert die Kundensuche auf nur Wiederkäufer.',
     'filters' => 'Filter',

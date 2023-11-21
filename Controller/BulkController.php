@@ -116,7 +116,6 @@ class BulkController extends BaseAdminController {
         }
 
         $params = [
-            'debug' => (int)$data['debug'],
             'delay' => $data['delay'] instanceof DateTime
                 ? $data['delay']->getTimestamp() : null,
             'flash' => (int)$data['flash'],

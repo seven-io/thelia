@@ -17,16 +17,6 @@ class BulkSms extends BaseForm {
             ],
         ]);
 
-        $this->formBuilder->add('debug', 'checkbox', [
-            'label' => Translator::getInstance()->trans(
-                'debug', [], Seven::DOMAIN_NAME),
-            'label_attr' => [
-                'for' => 'debug',
-                'help' => Translator::getInstance()
-                    ->trans('debug_help', [], Seven::DOMAIN_NAME),
-            ],
-        ]);
-
         $this->formBuilder->add('no_reload', 'checkbox', [
             'label' => Translator::getInstance()->trans(
                 'sms_no_reload', [], Seven::DOMAIN_NAME),

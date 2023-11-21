@@ -9,9 +9,6 @@ return [
 
     'config' => 'config',
 
-    'debug' => 'Debug',
-    'debug_help' => 'Validates the at API level but does not actually send messages.',
-
     'filter_reseller' => 'Is reseller?',
     'filter_reseller_help' => 'Narrows down customer search to include only resellers.',
     'filters' => 'Filters',
