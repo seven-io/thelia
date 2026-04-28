@@ -1,39 +1,79 @@
-<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
+<p align="center">
+  <img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" alt="seven logo" />
+</p>
 
-Send SMS to your customers via seven.
+<h1 align="center">seven SMS for Thelia</h1>
 
-# Installation
+<p align="center">
+  Send bulk SMS to your <a href="https://thelia.net/">Thelia</a> customers via the seven gateway.
+</p>
 
-## Manually
-* Download the latest release from [GitHub](http://github.com/seven-io/thelia/releases/latest/download/seven-telia-latest.zip).
-* Extract the archive into the modules folder `unzip -d <thelia_root>/local/modules/`.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-teal.svg" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/Thelia-2.x-blue" alt="Thelia 2.x" />
+  <img src="https://img.shields.io/badge/PHP-7.0%2B-purple" alt="PHP 7.0+" />
+  <a href="https://packagist.org/packages/seven.io/thelia"><img src="https://img.shields.io/packagist/v/seven.io/thelia" alt="Packagist" /></a>
+</p>
 
-## Composer
-Execute from inside your thelia installation root:
+---
 
-`composer require seven.io/thelia`
+## Features
+
+- **Bulk SMS** - Reach all customers (or a filtered subset) in one go
+- **Reseller Filter** - Limit recipients to reseller-type customers
+- **Property Placeholders** - Use `{{firstname}}`, `{{lastname}}` (or any customer property) in the message body
+
+## Prerequisites
+
+- [Thelia](https://thelia.net/) 2.x
+- PHP 7.0+
+- A [seven account](https://www.seven.io/) with API key ([How to get your API key](https://help.seven.io/en/developer/where-do-i-find-my-api-key))
+
+## Installation
+
+### Composer (recommended)
+
+```bash
+cd /path/to/thelia/root
+composer require seven.io/thelia
+```
+
+### Manual
+
+1. Download the [latest release](https://github.com/seven-io/thelia/releases/latest/download/seven-telia-latest.zip).
+2. Extract it into the modules folder:
+
+   ```bash
+   unzip -d <thelia_root>/local/modules/ seven-telia-latest.zip
+   ```
+
+## Configuration
+
+In the Thelia admin, enable the *seven* module and paste your seven API key into the module settings.
 
 ## Usage
 
-After installation, enable the module and fill in your API key in the module settings.
-
 ### Send bulk SMS
-Go to *Customers*, click *Bulk SMS* and fill out the form to fit your needs.
-After clicking *Send*, the messages get sent to the customers.
 
-### Filters
-- *Reseller* Narrow down customer search to include only resellers
+1. Go to **Customers**.
+2. Click **Bulk SMS**.
+3. Compose the message and apply filters (e.g. *Reseller*).
+4. Click **Send**.
 
 ### Placeholders
 
-Each customer property can be accessed via placeholders.
-Examples: 
+Reference any customer property in the message body using `{{property_name}}`:
 
-* {{firstname}} resolves to the customers first name
-* {{lastname}} resolves to the customers last name
+```
+Hi {{firstname}} {{lastname}}, your order is on its way!
+```
 
-#### Support
+Unresolved placeholders remain as plain text in the outgoing SMS.
 
-Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
+## Support
 
-[![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/) or [open an issue](https://github.com/seven-io/thelia/issues).
+
+## License
+
+[MIT](LICENSE)
